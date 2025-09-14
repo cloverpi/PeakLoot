@@ -1,0 +1,17 @@
+## Interface: 20503
+## Title: PeakLoot
+## Author: Gnerf/SuperFine
+## Version: 0.0.7b
+## Notes: Lootcouncil addon for Peak-Whitemane
+## SavedVariables: PeakLootDB
+
+Libs\LibStub\LibStub.lua
+Libs\StdUi\StdUi.xml
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+Libs\AceComm-3.0\AceComm-3.0.xml
+Libs\AceSerializer-3.0\AceSerializer-3.0.xml
+Utils\UIBuilder.lua
+PeakLootDB.lua
+bisTooltips.lua
+PeakbisGUI.lua
+PeakLoot.lua
