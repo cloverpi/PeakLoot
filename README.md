@@ -1,0 +1,2 @@
+# PeakLoot
+Lootcouncil addon
