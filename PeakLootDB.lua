@@ -2589,30 +2589,6 @@ _G.PeakLootDBDefaults = {
 }
 
 
-function Main:Init()
-	print(addonName .. "DB Init")
-	-- print(DB)
-	-- print(DB.BisLists)
-	for k,v in pairs(_G[addonName .. "DBDefaults"]) do
-		print(k)
-	end
-
-	-- if ( _G[addonName .. "DB"] == nil ) then
-	-- 	print('hello')
-		Main:CopyDBDefaults(_G[addonName .. "DB"] or {}, _G[addonName .. "DBDefaults"])
-			for k,v in pairs(_G[addonName .. "DB"]) do
-		print(k)
-	end
-	-- end
-	-- Main:CopyDBDefaults(_G[addonName .. "DB"] or {}, _G[addonName .. "DBDefaults"])
---   DB = _G[addonName .. "DB"]
-  -- DB = _G.BoostWaitlistDB.Main
-  -- Main:FixWaitlistRefs()
---   bisGUI:Init()
-  -- Main:SetInitState()
-  -- Main:PurgeAccountBlances()
-end
-
 function Main:CopyDBDefaults(db, def)
   for k,v in pairs(def) do
     if(db[k] == nil) then

@@ -28,8 +28,7 @@ local CustomSort = function(self, rowA, rowB, sortBy)
 	end
 end
 
-local specs = {
-}
+local specs = {}
 
 local itemListCols = {
   {
@@ -104,12 +103,24 @@ local itemListCols = {
 
 local regenerateSpecs = function()
   specs = {}
-  for k,v in pairs(DB.BisLists) do
-    if (v ~= nil) then
-      table.insert(specs, {text = k, value = k})
+
+  local function sortedKeys(t)
+    local keys = {}
+    for k in pairs(t) do
+      table.insert(keys, k)
     end
+    table.sort(keys, function(a, b)
+      return tostring(a) < tostring(b)
+    end)
+    return keys
+  end
+
+  for _, specName in ipairs(sortedKeys(DB.BisLists)) do
+    table.insert(specs, { text = specName, value = specName })
   end
 end
+
+
 -- Init functions
 function GUI:Init()
   print(addonName .. "DB Gui")
@@ -117,7 +128,6 @@ function GUI:Init()
   
   regenerateSpecs()
   GUI.created = false
-  print('gui:init')
   GUI:Create()
 end
 

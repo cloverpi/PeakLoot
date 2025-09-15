@@ -307,7 +307,7 @@ end
 local function eventHandler(self, event, arg1, arg2, ...)
   if ((event == "ADDON_LOADED") and (arg1 == addonName)) then
     Main:Init()
-    bisGUI:Init()
+    -- bisGUI:Init()
   elseif (event == "LOOT_READY" and DB.Main.autoAward) then
     local source = GetLootSourceInfo(1)
     local id = getUnitId(source)
@@ -388,15 +388,15 @@ end
 
 -- Init functions
 
--- function Main:Init()
---   Main:CopyDBDefaults(_G[addonName .. "DB"] or {}, _G[addonName .. "DBDefaults"])
---   DB = _G[addonName .. "DB"]
---   -- DB = _G.BoostWaitlistDB.Main
---   -- Main:FixWaitlistRefs()
---   bisGUI:Init()
---   -- Main:SetInitState()
---   -- Main:PurgeAccountBlances()
--- end
+function Main:Init()
+  Main:CopyDBDefaults(_G[addonName .. "DB"] or {}, _G[addonName .. "DBDefaults"])
+  DB = _G[addonName .. "DB"]
+  -- DB = _G.BoostWaitlistDB.Main
+  -- Main:FixWaitlistRefs()
+  bisGUI:Init()
+  -- Main:SetInitState()
+  -- Main:PurgeAccountBlances()
+end
 
 
 
